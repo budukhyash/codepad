@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codeboard Online IDE</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="header"> TechBuzz Online IDE </div>
+    <div class="control-panel">
+        Select Language:
+        &nbsp; &nbsp;
+        <select id="lang" class="languages" onchange="changeLanguage()">
+            <option value="python3"> Python </option>
+            <option value="c"> C </option>
+            <option value="cpp"> C++ </option>
+        </select>
+    </div>
+    <div class="editor" id="editor"></div>
+
+    <div class="button-container">
+        <button class="btn" id="myBtn"> Run Code</button>
+    </div>
+
+    <textarea class="input" id="input" placeholder="User input"></textarea>
+    <textarea class="output" id="output" disabled placeholder="Output"></textarea>
+    <textarea class="stderr" id="stderr" disabled placeholder="Error"></textarea>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/ace.js"></script>
+    <script src="js/lib/theme-monokai.js"></script>
+    <script src="js/ide.js"></script>
+
+</body>
+</html>
