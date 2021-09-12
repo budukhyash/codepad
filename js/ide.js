@@ -23,7 +23,7 @@ function body (src,lang,input) {
         "src": src,
         "stdin": input,
         "lang": lang,
-        "timeout": 15
+        "timeout": 5
     })
     return raw;
 }
@@ -58,7 +58,7 @@ async function poll(url)
 
     if(output.data == undefined)
     {
-        await new Promise(resolve => setTimeout(resolve, 200));
+        await new Promise(resolve => setTimeout(resolve, 100));
         await poll(url);
     }
     else
