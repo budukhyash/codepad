@@ -46,7 +46,7 @@ run_btn.onclick = async function() {
         body: body(src,lang,input),
         redirect: 'follow'
     };
-    ans = await fetch("http://rec-server:10000 /submit", requestOptions);
+    ans = await fetch("http://rec-server:10000/submit", requestOptions);
     ans = (await ans.json()).data
     console.log(ans);
     poll(ans);
