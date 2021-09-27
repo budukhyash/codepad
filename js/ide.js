@@ -46,10 +46,16 @@ run_btn.onclick = async function() {
         body: body(src,lang,input),
         redirect: 'follow'
     };
-    ans = await fetch("https://rec-server:10000/submit", requestOptions);
+    ans = await fetch("http://ec2-3-140-248-70.us-east-2.compute.amazonaws.com:7000/submit", requestOptions);
     ans = (await ans.json()).data
-    console.log(ans);
-    poll(ans);
+    console.log("http://ec2-3-140-248-70.us-east-2.compute.amazonaws.com:7000/results/" + ans.slice(30));
+    poll("http://ec2-3-140-248-70.us-east-2.compute.amazonaws.com:7000/results/" + ans.slice(30));
+
+    // ans = await fetch("http://127.0.0.1:7000/submit", requestOptions);
+    // ans = (await ans.json()).data
+    // console.log(ans);
+    // poll(ans);
+
 };
 
 async function poll(url)
